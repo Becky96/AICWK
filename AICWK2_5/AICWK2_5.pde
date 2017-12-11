@@ -46,7 +46,7 @@ class InferenceEngine {
           for (int j = 0; j < 5; j++) {
             print(sg[j] + ", ");
           }
-          println("In WM");
+          println("--> available in WM");
           _found.set(i, 1);
         }//If subgoal is not in working memory, perform match, select, and act on subgoal.
         else {
@@ -56,7 +56,7 @@ class InferenceEngine {
 
             print(sg[j] + ", ");  //Printing not in working memory.
           }
-          println("Not in WM");
+          println("--> not available in WM");
 
           //Match, select, and act on goal.
           matchSelectAct(subgoals.get(i), i);
@@ -173,8 +173,7 @@ class InferenceEngine {
         }
       }
     }
-
-    return true;
+    return false;
   }
 }
 
